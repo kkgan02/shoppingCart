@@ -1,6 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "bootswatch/dist/morph/bootstrap.min.css";
+import 'bootswatch/dist/morph/bootstrap.min.css'; 
 
 import {Container, Row, Col} from "react-bootstrap";
 import React, {useState} from "react";
@@ -69,51 +69,33 @@ const removeFromCart = (productId) => {
 };
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div className="container-fluid">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark" id="mainNav">
+        <div className="container px-4 px-lg-5">
           <a className="navbar-brand fw-bold" href="#">ShopZone</a>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
 
-          <div className="collapse navbar-collapse" id="navbarColor02">
-            <ul className="navbar-nav me-auto">
+          <div className="collapse navbar-collapse" id="navbarResponsive">
+            <ul className="navbar-nav ms-auto py-4 py-lg-0">
               <li className="nav-item">
                 <a className="nav-link active" href="#">Shopping Cart
                   <span className="visually-hidden">(current)</span>
                 </a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Features</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Pricing</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">About</a>
-              </li>
             </ul>
-            <form className="d-flex">
-              <input className="form-control me-sm-2" type="text" placeholder="Search"/>
-              <button className="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-            </form>
           </div>
         </div>
       </nav>
-      <Container fluid="md">
-        <Row>
+      <Container>
           <Col>
-            <ProductList
-            products={products}
-            addToCart={addToCart}
-            />
-          </Col>
-          <Col>
-            <ShoppingCart
-            selectedItems={selectedItems}
-            removeFromCart={removeFromCart}/>
-          </Col>
-        </Row>
+              <ProductList
+              products={products}
+              addToCart={addToCart}
+              />
+            </Col>   
+            <Col>
+              <ShoppingCart
+              selectedItems={selectedItems}
+              removeFromCart={removeFromCart}/>
+            </Col>
       </Container>
     </div>
     );

@@ -42,6 +42,7 @@ export default function ShoppingCart(props) {
                 }}
                 >Remove</button>
               </Col>
+              <hr/>
             </Row>
           );
         })}
